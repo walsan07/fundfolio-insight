@@ -47,7 +47,7 @@ const TaxSummary = ({ ltcgSummary, onViewLTCGDetails }: TaxSummaryProps) => {
                       </span>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>Units eligible for Long Term Capital Gains tax treatment (held > 1 year)</p>
+                      <p>Units eligible for Long Term Capital Gains tax treatment (held &gt; 1 year)</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
