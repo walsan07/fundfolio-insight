@@ -102,8 +102,8 @@ const UploadSection = ({ onDataReceived }: UploadSectionProps) => {
       const data = await response.json();
 
       if (!response.ok) {
-        if (data.error && data.error.includes('password')) {
-          // If password error, show password dialog
+        // Check if the error indicates the document is encrypted
+        if (data.error && (data.error.includes('encrypted') || data.error.includes('password'))) {
           setCurrentFile(file);
           setPasswordDialogOpen(true);
           setIsUploading(false);
