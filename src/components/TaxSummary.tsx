@@ -8,7 +8,7 @@ import {
   TooltipContent,
 } from '@/components/ui/tooltip';
 import { formatINR } from '@/lib/utils';
-import { Info, Receipt } from 'lucide-react';
+import { HelpCircle, Receipt } from 'lucide-react';
 
 interface LTCGSummary {
   eligibleUnits: number;
@@ -43,7 +43,7 @@ const TaxSummary = ({ ltcgSummary, onViewLTCGDetails }: TaxSummaryProps) => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <span>
-                        <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                        <HelpCircle className="h-3.5 w-3.5 text-muted-foreground cursor-help" />
                       </span>
                     </TooltipTrigger>
                     <TooltipContent>
@@ -67,7 +67,7 @@ const TaxSummary = ({ ltcgSummary, onViewLTCGDetails }: TaxSummaryProps) => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <span>
-                        <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                        <HelpCircle className="h-3.5 w-3.5 text-muted-foreground cursor-help" />
                       </span>
                     </TooltipTrigger>
                     <TooltipContent>
@@ -93,7 +93,7 @@ const TaxSummary = ({ ltcgSummary, onViewLTCGDetails }: TaxSummaryProps) => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <span>
-                        <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                        <HelpCircle className="h-3.5 w-3.5 text-muted-foreground cursor-help" />
                       </span>
                     </TooltipTrigger>
                     <TooltipContent>

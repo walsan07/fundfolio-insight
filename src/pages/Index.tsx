@@ -9,6 +9,7 @@ import SkeletonDashboard from '@/components/SkeletonDashboard';
 import LTCGDetailsModal from '@/components/modals/LTCGDetailsModal';
 import LockedFundsModal from '@/components/modals/LockedFundsModal';
 import WithdrawalsModal from '@/components/modals/WithdrawalsModal';
+import Navbar from '@/components/Navbar';
 import { transformData } from '@/lib/utils';
 
 const Index = () => {
@@ -32,13 +33,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="bg-white border-b border-border/40 py-4 px-4 md:px-6 lg:px-8 sticky top-0 z-10 backdrop-blur-md bg-white/80">
-        <div className="container mx-auto">
-          <h1 className="text-2xl md:text-3xl font-medium text-center md:text-left">
-            Investment Dashboard
-          </h1>
-        </div>
-      </header>
+      <Navbar />
       
       <main className="container mx-auto py-6 px-4 md:px-6 lg:px-8 pb-20">
         <UploadSection onDataReceived={handleDataReceived} />
