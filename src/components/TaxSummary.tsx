@@ -46,7 +46,7 @@ const TaxSummary = ({ ltcgSummary, onViewLTCGDetails }: TaxSummaryProps) => {
                         <HelpCircle className="h-3.5 w-3.5 text-muted-foreground cursor-help" />
                       </span>
                     </TooltipTrigger>
-                    <TooltipContent side="top" className="z-50 max-w-xs">
+                    <TooltipContent side="top" align="center" className="z-[1000] TooltipContent">
                       <p>Units eligible for Long Term Capital Gains tax treatment (held &gt; 1 year)</p>
                     </TooltipContent>
                   </Tooltip>
@@ -70,7 +70,7 @@ const TaxSummary = ({ ltcgSummary, onViewLTCGDetails }: TaxSummaryProps) => {
                         <HelpCircle className="h-3.5 w-3.5 text-muted-foreground cursor-help" />
                       </span>
                     </TooltipTrigger>
-                    <TooltipContent side="top" className="z-50 max-w-xs">
+                    <TooltipContent side="top" align="center" className="z-[1000] TooltipContent">
                       <p>Profit from long-term investments redeemed in current financial year</p>
                     </TooltipContent>
                   </Tooltip>
@@ -96,7 +96,7 @@ const TaxSummary = ({ ltcgSummary, onViewLTCGDetails }: TaxSummaryProps) => {
                         <HelpCircle className="h-3.5 w-3.5 text-muted-foreground cursor-help" />
                       </span>
                     </TooltipTrigger>
-                    <TooltipContent side="top" className="z-50 max-w-xs">
+                    <TooltipContent side="top" align="center" className="z-[1000] TooltipContent">
                       <p>Total Long Term Capital Gains (realized + unrealized)</p>
                     </TooltipContent>
                   </Tooltip>

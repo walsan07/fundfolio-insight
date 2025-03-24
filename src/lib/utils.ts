@@ -82,15 +82,15 @@ export function transformData(data: any) {
         xirrValues.push(sim.investment_summary.xirr);
       }
       
-      let overallRealizedGain = 0;
+      let schemeRealizedGain = 0;
       if (scheme.unrealized_tax_simulation.details && 
           scheme.unrealized_tax_simulation.details.lot_details_realized) {
         scheme.unrealized_tax_simulation.details.lot_details_realized.forEach((tx: any) => {
-          overallRealizedGain += tx.gain;
+          schemeRealizedGain += tx.gain;
         });
       }
       
-      realizedSummary.overallRealizedGain += overallRealizedGain;
+      realizedSummary.overallRealizedGain += schemeRealizedGain;
       realizedSummary.currentFY += sim.realized.realized_total_gain_current_FY;
       realizedSummary.lt += sim.realized.realized_long_term_gain_current_FY;
       realizedSummary.st += sim.realized.realized_short_term_gain_current_FY;
@@ -150,7 +150,7 @@ export function transformData(data: any) {
         currentlyInvested: sim.investment_summary.currently_invested,
         overallProfit: sim.investment_summary.overall_profit,
         profitPercentage: sim.investment_summary.profit_percentage,
-        overallRealizedGain: overallRealizedGain,
+        overallRealizedGain: schemeRealizedGain,
         currentFYRealizedGain: sim.realized.realized_total_gain_current_FY,
         unrealizedGain: sim.unrealized.unrealized_gain,
         unrealizedLongTermGain: sim.unrealized.unrealized_long_term_gain,

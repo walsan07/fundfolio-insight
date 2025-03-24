@@ -55,10 +55,10 @@ const InvestmentSummary = ({
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <span>
-                      <HelpCircle className="h-3.5 w-3.5 text-muted-foreground" />
+                      <HelpCircle className="h-3.5 w-3.5 text-muted-foreground cursor-help" />
                     </span>
                   </TooltipTrigger>
-                  <TooltipContent side="top" className="z-50 max-w-xs">
+                  <TooltipContent side="top" align="center" className="z-[1000] TooltipContent">
                     <p>Total profit across all your investments</p>
                   </TooltipContent>
                 </Tooltip>
@@ -84,10 +84,10 @@ const InvestmentSummary = ({
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <span>
-                      <HelpCircle className="h-3.5 w-3.5 text-muted-foreground" />
+                      <HelpCircle className="h-3.5 w-3.5 text-muted-foreground cursor-help" />
                     </span>
                   </TooltipTrigger>
-                  <TooltipContent side="top" className="z-50 max-w-xs">
+                  <TooltipContent side="top" align="center" className="z-[1000] TooltipContent">
                     <p>Extended Internal Rate of Return - annualized return of your investments</p>
                   </TooltipContent>
                 </Tooltip>
@@ -105,10 +105,10 @@ const InvestmentSummary = ({
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <span>
-                      <HelpCircle className="h-3.5 w-3.5 text-muted-foreground" />
+                      <HelpCircle className="h-3.5 w-3.5 text-muted-foreground cursor-help" />
                     </span>
                   </TooltipTrigger>
-                  <TooltipContent side="top" className="z-50 max-w-xs">
+                  <TooltipContent side="top" align="center" className="z-[1000] TooltipContent">
                     <p>Investments in ELSS funds that have a lock-in period</p>
                   </TooltipContent>
                 </Tooltip>

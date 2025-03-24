@@ -42,9 +42,16 @@
   color: #888;
 }
 
-/* Fix for tooltips to ensure they are visible */
+/* Fix for tooltips to ensure they are visible and not cut off */
 [data-radix-popper-content-wrapper] {
   z-index: 999 !important;
+}
+
+/* Ensure tooltip content is always visible */
+.TooltipContent {
+  max-width: 200px;
+  z-index: 1000 !important;
+  overflow: visible !important;
 }
 
 .gain-positive {
@@ -65,3 +72,4 @@
   font-size: 1.125rem;
   font-weight: 600;
 }
+
