@@ -29,7 +29,7 @@ export function transformData(data: any) {
   let overallCurrentlyInvested = 0;
   let overallProfit = 0;
   let overallWithdrawn = 0;
-  let firstXirr = null;
+  let xirrValues: number[] = [];
   let lockedOverall = { amount: 0, profit: 0 };
   
   // Realized & unrealized gains summary
@@ -78,8 +78,8 @@ export function transformData(data: any) {
       overallWithdrawn += sim.investment_summary.withdrawn_amount;
       overallProfit += sim.investment_summary.overall_profit;
       
-      if (!firstXirr && sim.investment_summary.xirr !== null) {
-        firstXirr = sim.investment_summary.xirr;
+      if (sim.investment_summary.xirr !== null && !isNaN(sim.investment_summary.xirr)) {
+        xirrValues.push(sim.investment_summary.xirr);
       }
       
       let overallRealizedGain = 0;
@@ -152,7 +152,7 @@ export function transformData(data: any) {
         profitPercentage: sim.investment_summary.profit_percentage,
         overallRealizedGain: overallRealizedGain,
         currentFYRealizedGain: sim.realized.realized_total_gain_current_FY,
-        unrealizedGain: sim.investment_summary.current_market_value - sim.investment_summary.currently_invested,
+        unrealizedGain: sim.unrealized.unrealized_gain,
         unrealizedLongTermGain: sim.unrealized.unrealized_long_term_gain,
         unrealizedShortTermGain: sim.unrealized.unrealized_short_term_gain,
         xirr: sim.investment_summary.xirr
@@ -170,12 +170,15 @@ export function transformData(data: any) {
   // Calculate overall stats
   const profitPercentage = overallCurrentlyInvested ? ((overallProfit/overallCurrentlyInvested)*100) : 0;
   const returnOnInvestment = overallCurrentlyInvested ? ((unrealizedSummary.total/overallCurrentlyInvested)*100) : 0;
-  const overallXirr = firstXirr !== null ? firstXirr : 0;
+  
+  // Calculate weighted average XIRR
+  const overallXirr = xirrValues.length > 0 ? 
+    xirrValues.reduce((sum, value) => sum + value, 0) / xirrValues.length : 0;
   
   // Calculate LTCG tax
   let totalLTRealizedFY = realizedSummary.lt;
   let totalLTGain = totalLTRealizedFY + ltcgSummary.unrealizedLTGain;
-  let nonTaxable = 100000;
+  let nonTaxable = 100000; // Exempt amount for LTCG
   let taxableLTGain = totalLTGain - nonTaxable;
   taxableLTGain = taxableLTGain > 0 ? taxableLTGain : 0;
   

@@ -7,7 +7,7 @@ import {
   TooltipContent,
 } from '@/components/ui/tooltip';
 import { formatINR } from '@/lib/utils';
-import { Info, TrendingUp, TrendingDown, Wallet } from 'lucide-react';
+import { HelpCircle, TrendingUp, TrendingDown, Wallet } from 'lucide-react';
 
 interface SummaryStats {
   currentMarketValue: number;
@@ -55,10 +55,10 @@ const InvestmentSummary = ({
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <span>
-                      <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                      <HelpCircle className="h-3.5 w-3.5 text-muted-foreground" />
                     </span>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent side="top" className="z-50 max-w-xs">
                     <p>Total profit across all your investments</p>
                   </TooltipContent>
                 </Tooltip>
@@ -84,17 +84,17 @@ const InvestmentSummary = ({
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <span>
-                      <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                      <HelpCircle className="h-3.5 w-3.5 text-muted-foreground" />
                     </span>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent side="top" className="z-50 max-w-xs">
                     <p>Extended Internal Rate of Return - annualized return of your investments</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
             <p className={`stat-value ${stats.xirr > 0 ? 'gain-positive' : 'gain-negative'}`}>
-              {stats.xirr.toFixed(2)}%
+              {stats.xirr ? stats.xirr.toFixed(2) : '0.00'}%
             </p>
           </div>
 
@@ -105,10 +105,10 @@ const InvestmentSummary = ({
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <span>
-                      <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                      <HelpCircle className="h-3.5 w-3.5 text-muted-foreground" />
                     </span>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent side="top" className="z-50 max-w-xs">
                     <p>Investments in ELSS funds that have a lock-in period</p>
                   </TooltipContent>
                 </Tooltip>

@@ -7,7 +7,7 @@ import {
   TooltipContent,
 } from '@/components/ui/tooltip';
 import { formatINR } from '@/lib/utils';
-import { Info, PieChart, BarChart3 } from 'lucide-react';
+import { HelpCircle, PieChart, BarChart3 } from 'lucide-react';
 
 interface RealizedGains {
   overallRealizedGain: number;
@@ -47,10 +47,10 @@ const GainsSummary = ({ realized, unrealized }: GainsSummaryProps) => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <span>
-                        <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                        <HelpCircle className="h-3.5 w-3.5 text-muted-foreground" />
                       </span>
                     </TooltipTrigger>
-                    <TooltipContent>
+                    <TooltipContent side="top" className="z-50 max-w-xs">
                       <p>Total profit from all redeemed investments</p>
                     </TooltipContent>
                   </Tooltip>
@@ -68,10 +68,10 @@ const GainsSummary = ({ realized, unrealized }: GainsSummaryProps) => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <span>
-                        <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                        <HelpCircle className="h-3.5 w-3.5 text-muted-foreground" />
                       </span>
                     </TooltipTrigger>
-                    <TooltipContent>
+                    <TooltipContent side="top" className="z-50 max-w-xs">
                       <p>Profit from investments redeemed in the current financial year</p>
                     </TooltipContent>
                   </Tooltip>
@@ -116,10 +116,10 @@ const GainsSummary = ({ realized, unrealized }: GainsSummaryProps) => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <span>
-                        <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                        <HelpCircle className="h-3.5 w-3.5 text-muted-foreground" />
                       </span>
                     </TooltipTrigger>
-                    <TooltipContent>
+                    <TooltipContent side="top" className="z-50 max-w-xs">
                       <p>Profit from current investments that have not been redeemed</p>
                     </TooltipContent>
                   </Tooltip>
@@ -154,10 +154,10 @@ const GainsSummary = ({ realized, unrealized }: GainsSummaryProps) => {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <span>
-                          <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                          <HelpCircle className="h-3.5 w-3.5 text-muted-foreground" />
                         </span>
                       </TooltipTrigger>
-                      <TooltipContent>
+                      <TooltipContent side="top" className="z-50 max-w-xs">
                         <p>Return on current investment</p>
                       </TooltipContent>
                     </Tooltip>
@@ -175,10 +175,10 @@ const GainsSummary = ({ realized, unrealized }: GainsSummaryProps) => {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <span>
-                          <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                          <HelpCircle className="h-3.5 w-3.5 text-muted-foreground" />
                         </span>
                       </TooltipTrigger>
-                      <TooltipContent>
+                      <TooltipContent side="top" className="z-50 max-w-xs">
                         <p>Profit in locked ELSS investments</p>
                       </TooltipContent>
                     </Tooltip>
